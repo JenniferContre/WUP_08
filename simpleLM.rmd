@@ -19,26 +19,77 @@ bears$MONTH<- as.factor(bears$MONTH)
 ```
 
 ## Model LENGTH ~ NECK  this is an example  
+```{r}
+plot(LENGTH~NECK, data=bears, pch=19)
+```
 
+This model displays that as the neck circumference increases, the length of the neck also increases at a primarily linear manner. 
 
+```{r}
+model.1 <- lm(LENGTH~NECK,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-squares is 0.7476.
+    
 Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
-    
 ## Model LENGTH ~ HEADLEN
+```{r}
+plot(LENGTH~HEADLEN, data=bears, pch=19)
+```
 
-
+This model displays that as the head length increases, the length of the neck also increases at a primarily linear manner. 
     
+```{r}
+model.1 <- lm(LENGTH~HEADLEN,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-squares is 0.8434.
+
 ## Model LENGTH ~ HeadWTH
-    
+```{r}
+plot(LENGTH~HEADWTH, data=bears, pch=19)
+```    
+This model displays that as the head width increases, the length of the neck also increases at a primarily linear manner.
 
+```{r}
+model.1 <- lm(LENGTH~HEADWTH,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-squares is 0.5321.
 
 ## Model LENGTH ~ CHEST
+```{r}
+plot(LENGTH~CHEST, data=bears, pch=19)
+```    
 
-
+This model displays that as the chest increases, the length of the neck also increases at a primarily linear manner.
     
+    
+```{r}
+model.1 <- lm(LENGTH~CHEST,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-squares is 0.7869.
+
 ## Model LENGTH ~ WEIGHT
-    
+```{r}
+plot(LENGTH~WEIGHT, data=bears, pch=19)
+```        
+
+This model displays that as the weight increases, the length of the neck also increases at a primarily linear manner.   
 
     
+```{r}
+model.1 <- lm(LENGTH~WEIGHT,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-squares is 0.7423.
+
 ## Models from WORST to BEST
     
 
