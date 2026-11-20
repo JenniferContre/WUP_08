@@ -30,9 +30,10 @@ model.1 <- lm(LENGTH~NECK,data=bears)
 summary.lm(model.1)
 ```
 
-The adjusted R-squares is 0.7476.
+The adjusted R-squared is 0.7476.
     
 Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+
 ## Model LENGTH ~ HEADLEN
 ```{r}
 plot(LENGTH~HEADLEN, data=bears, pch=19)
@@ -45,12 +46,13 @@ model.1 <- lm(LENGTH~HEADLEN,data=bears)
 summary.lm(model.1)
 ```
 
-The adjusted R-squares is 0.8434.
+The adjusted R-squared is 0.8434.
 
 ## Model LENGTH ~ HeadWTH
 ```{r}
 plot(LENGTH~HEADWTH, data=bears, pch=19)
 ```    
+
 This model displays that as the head width increases, the length of the neck also increases at a primarily linear manner.
 
 ```{r}
@@ -58,7 +60,7 @@ model.1 <- lm(LENGTH~HEADWTH,data=bears)
 summary.lm(model.1)
 ```
 
-The adjusted R-squares is 0.5321.
+The adjusted R-squared is 0.5321.
 
 ## Model LENGTH ~ CHEST
 ```{r}
@@ -73,7 +75,7 @@ model.1 <- lm(LENGTH~CHEST,data=bears)
 summary.lm(model.1)
 ```
 
-The adjusted R-squares is 0.7869.
+The adjusted R-squared is 0.7869.
 
 ## Model LENGTH ~ WEIGHT
 ```{r}
@@ -88,8 +90,38 @@ model.1 <- lm(LENGTH~WEIGHT,data=bears)
 summary.lm(model.1)
 ```
 
-The adjusted R-squares is 0.7423.
+The adjusted R-squared is 0.7423.
 
 ## Models from WORST to BEST
-    
+The worst model was the model of the relationship between the length and the head width that had an adjusted R-squared of 0.5321 and whose plot was linear like but not strongly correlated.
+```{r}
+plot(LENGTH~HEADWTH, data=bears, pch=19)
+```    
 
+The second worst model was the model of the relationship between the length and the weight that had an adjusted R-squared of 0.7423 and whose plot was linear like with a bit of a curve and correlated better than the worst model but was not the best. 
+```{r}
+plot(LENGTH~WEIGHT, data=bears, pch=19)
+```  
+
+The middle model was the model of the relationship between the length and the neck that had an adjusted R-squared of 0.7476 and whose plot was linear and correlated with a middle strength correlation(not the strongest but not weak either).
+
+```{r}
+plot(LENGTH~NECK, data=bears, pch=19)
+```
+
+The second best model was the model of the relationship between the length and the chest that had an adjusted R-squared of 0.7869 and whose plot was linear and correlated with a stronger correlation.
+```{r}
+plot(LENGTH~CHEST, data=bears, pch=19)
+```
+
+The best model was the model of the relationship between the length and the head length  that had an adjusted R-squared of 0.8434 and whose plot was linear and correlated with a strong correlation.
+```{r}
+plot(LENGTH~HEADLEN, data=bears, pch=19)
+```
+
+Final Standings from Worst to Best: 
+Length and Head Width Model - 0.5321
+Length and Weight Model - 0.7423
+Length and Neck Circumference Model - 0.7476
+Length and Chest Model - 0.7869
+Length and Head Length Model - 0.8434
